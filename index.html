@@ -31,7 +31,7 @@
 
     a { text-decoration: none; color: inherit; }
 
-    /* ── NAV ── */
+    
     nav {
       position: sticky;
       top: 0;
@@ -70,7 +70,7 @@
 
     .nav-links a:hover { color: #fff; }
 
-    /* ── HERO ── */
+ 
     #hero {
       padding: 60px 5% 80px;
       display: flex;
@@ -79,7 +79,7 @@
       min-height: 90vh;
     }
 
-    /* The picnic blanket */
+   
     .b.blanket{
   transition:
     transform 0.35s cubic-bezier(.34,1.56,.64,1);
@@ -115,7 +115,7 @@
       transform: rotate(0.6deg);
     }
 
-    /* "PORTFOLIO" title */
+ 
     .title-portfolio {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
@@ -144,7 +144,7 @@
       letter-spacing: 2px;
     }
 
-    /* Name strip */
+ 
     .name-strip {
       display: inline-block;
       background: white;
@@ -170,7 +170,7 @@
       margin-top: 2px;
     }
 
-    /* scroll cue */
+    
     .scroll-cue {
       margin-top: 36px;
       text-align: center;
@@ -185,14 +185,14 @@
       50%       { transform: translateY(8px); }
     }
 
-    /* ── PROJECTS ── */
+    
     #projects {
       background: var(--cream);
       padding: 80px 5%;
       position: relative;
     }
 
-    /* torn paper edge top */
+   
     #projects::before {
       content: '';
       position: absolute;
@@ -223,7 +223,7 @@
       text-stroke: 3px var(--white);
       text-shadow: 2px 3px 0 rgba(0,0,0,0.12);
       paint-order: stroke fill;
-      /* paint-order makes stroke render behind fill in supporting browsers */
+      
     }
 
     .projects-header p {
@@ -233,7 +233,7 @@
       font-weight: 600;
     }
 
-    /* Polaroid-style photo grid */
+    
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -242,13 +242,7 @@
       margin: 0 auto;
     }
 
-    /* =====================================================
-       CARA TAMBAH GAMBAR PROYEKMU:
-       1. Simpan gambar di folder yang sama dengan file HTML ini
-       2. Di dalam setiap .photo-frame, ubah bagian <img> seperti ini:
-          <img src="nama-gambar-kamu.jpg" alt="nama proyek" />
-       3. Atau kalau gambar online, ganti src dengan URL gambar
-    ===================================================== */
+   
     .photo-frame {
       background: white;
       padding: 12px 12px 40px;
@@ -267,10 +261,7 @@
       box-shadow: 6px 8px 24px rgba(0,0,0,0.25);
     }
 
-    /* =====================================================
-       INI TEMPAT GAMBAR PROYEKMU — ganti <img> di sini
-       src="GANTI_DENGAN_NAMA_FILE_GAMBAR_KAMU.jpg"
-    ===================================================== */
+  
     .photo-frame img {
       width: 100%;
       aspect-ratio: 4/3;
@@ -279,7 +270,7 @@
       background: #e0e0e0;
     }
 
-    /* Placeholder saat belum ada gambar */
+  
     .photo-placeholder {
       width: 100%;
       aspect-ratio: 4/3;
@@ -301,7 +292,7 @@
       opacity: 0.4;
     }
 
-    /* ── CONTACT ── */
+  
     #contact {
       padding: 70px 5%;
       text-align: center;
@@ -357,7 +348,7 @@
       transform: translateY(-2px);
     }
 
-    /* ── FOOTER ── */
+    
     footer {
       background: rgba(20, 60, 5, 0.85);
       color: rgba(255,255,255,0.65);
@@ -369,7 +360,7 @@
 
     footer strong { color: white; }
 
-    /* ── REVEAL ── */
+  
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -381,7 +372,7 @@
       transform: none;
     }
 
-    /* ── RESPONSIVE ── */
+    
     @media (max-width: 768px) {
       .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
       .blanket { padding: 40px 28px 48px; }
@@ -397,7 +388,7 @@
 </head>
 <body>
 
-  <!-- ── NAV ── -->
+
   <nav>
     <div class="nav-logo">Ashel</div>
     <ul class="nav-links">
@@ -406,7 +397,7 @@
     </ul>
   </nav>
 
-  <!-- ── HERO ── -->
+ 
   <section id="hero">
     <div>
       <div class="blanket">
@@ -416,7 +407,7 @@
           <br>
           <div class="name-strip">
             <h1>Ashel</h1>
-            <p>Geographic Information Systems, Oceanography and Creative Enthusiast</p>
+            <p>Marine Enthusiast</p>
           </div>
         </div>
       </div>
@@ -424,32 +415,16 @@
     </div>
   </section>
 
-  <!-- ── PROJECTS ── -->
+ 
   <section id="projects">
     <div class="projects-header reveal">
       <h2>My Projects</h2>
     </div>
 
-    <!--
-    =====================================================
-    CARA TAMBAH GAMBAR PROYEKMU:
-
-    Ganti setiap blok <div class="photo-placeholder"> dengan:
-    <img src="nama-file-gambar.jpg" alt="nama proyek" />
-
-    Contoh:
-    <img src="project-sst.jpg" alt="Analisis SPL" />
-
-    Simpan file gambarmu di folder yang sama dengan index.html ini.
-
-    Mau tambah project baru? Copy paste satu blok .photo-frame
-    dan ganti gambarnya.
-    =====================================================
-    -->
 
     <div class="photo-grid">
 
-      <!-- PROJECT 1 — ganti photo-placeholder dengan <img src="..."> -->
+  
       <div class="photo-frame reveal">
         <div class="photo-placeholder">
           <span><img src="Peta Kerawanan Banjir Rob.png" alt="Project 1" />
@@ -457,7 +432,7 @@
       Peta Kerawanan Banjir Rob Kecamatan Denpasar Selatan, Bali.
        </p>
       </div>
-        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 1" /> -->
+       
       </div>
 
       <!-- PROJECT 2 -->
@@ -468,7 +443,7 @@
       Peta Ketinggian Tanah (Lahan) Kecamatan Denpasar Selatan, Bali.
        </p>
         </div>
-        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 2" /> -->
+     
       </div>
 
       <!-- PROJECT 3 -->
@@ -479,7 +454,7 @@
       Peta Kemiringan Tanah Kecamatan Denpasar Selatan, Bali.
        </p>
         </div>
-        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 3" /> -->
+       
       </div>
 
       <!-- PROJECT 4 -->
@@ -490,7 +465,7 @@
       Survei Kontur Batimetri Laut Natuna, Kepulauan Riau.
        </p>
         </div>
-        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 4" /> -->
+     
       </div>
 
       <!-- PROJECT 5 -->
@@ -501,7 +476,7 @@
       Peta Analisis Potensi Banjir Jakarta Utara 2016-2024.
        </p>
         </div>
-        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 5" /> -->
+      
       </div>
 
       <!-- PROJECT 6 -->
@@ -512,9 +487,55 @@
       Peta Penggunaan Lahan Kecamatan Denpasar Selatan, Bali.
        </p>
         </div>
-        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 6" /> -->
+     
+      </div>
+      <!-- PROJECT 7 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder" style="aspect-ratio:auto;">
+          <img src="seismik-inline-245.jpg" alt="Project 7" style="aspect-ratio:auto; object-fit:contain;" />
+          <p class="photo-caption">Survei Seismik untuk Deteksi Hidrokarbon.</p>
+        </div>
       </div>
 
+      <!-- PROJECT 8 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder" style="aspect-ratio:auto;">
+          <img src="well-log-triple-combo.png" alt="Project 8" style="aspect-ratio:auto; object-fit:contain;" />
+          <p class="photo-caption">Interpretasi Well Log Triple Combo untuk Identifikasi Zona Prospek Hidrokarbon.</p>
+        </div>
+      </div>
+
+      <!-- PROJECT 9 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder" style="aspect-ratio:auto;">
+          <img src="peta-raja-ampat.png" alt="Project 9" style="aspect-ratio:auto; object-fit:contain;" />
+          <p class="photo-caption">Analisis Distribusi Amphiprion sp. di Perairan Kepulauan Raja Ampat, Indonesia.</p>
+        </div>
+      </div>
+
+      <!-- PROJECT 10 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder" style="aspect-ratio:auto;">
+          <img src="banner-eksis.png" alt="Project 10" style="aspect-ratio:auto; object-fit:contain;" />
+          <p class="photo-caption">Banner Event Pengabdian Masyarakat.</p>
+        </div>
+      </div>
+
+      <!-- PROJECT 11 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder" style="aspect-ratio:auto;">
+          <img src="poster-biore.png" alt="Project 11" style="aspect-ratio:auto; object-fit:contain;" />
+          <p class="photo-caption">Scientific Poster: Pemanfaatan Bioteknologi Konvensional dalam Pengolahan Limbah Organik Rumah Tangga.</p>
+        </div>
+      </div>
+
+      <!-- PROJECT 12 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder" style="aspect-ratio:auto;">
+          <img src="spektrogram.png" alt="Project 12" style="aspect-ratio:auto; object-fit:contain;" />
+          <p class="photo-caption">Visualisasi Spektrogram Vokalisasi Mamalia Laut.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -524,7 +545,7 @@
       <h2>Let's Connect!</h2>
       <p>let's get in touch!</p>
       <div class="contact-links">
-        <!-- Ganti href="#" dengan link akun kamu -->
+       
         <a href="https://discordapp.com/users/@pinkmiracles" class="contact-btn">Discord</a>
         <div class="contact-links">
           <a href="https://www.linkedin.com" class="contact-btn">LinkedIn</a>
