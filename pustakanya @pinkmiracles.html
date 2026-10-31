@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio 2025 — Ashel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:      #cc2020;
+      --red-dark: #991515;
+      --green:    #2d6e10;
+      --green-light: #4a9e25;
+      --white:    #ffffff;
+      --cream:    #fdf8f0;
+      --text:     #1a1a1a;
+      --text-sec: #555;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── GRASS BODY ── */
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: url("grass.jpg") center center/cover fixed no-repeat;
+  min-height: 100vh;
+  color: var(--text);
+}
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      height: 62px;
+      background: rgba(30, 80, 10, 0.75);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid rgba(255,255,255,0.12);
+    }
+
+    .nav-logo {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--white);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 60px 5% 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+    }
+
+    /* The picnic blanket */
+    .b.blanket{
+  transition:
+    transform 0.35s cubic-bezier(.34,1.56,.64,1);
+}
+.blanket:hover{
+  transform: scale(1.1) rotate(-1.2deg);
+}
+    .blanket {
+  width: 100%;
+  max-width: 860px;
+  min-height: 650px;
+
+  background-image: url("rotis.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110% auto;
+
+  padding: 100px 56px 100px;
+  position: relative;
+}
+    /* Corner fold effect */
+    .blanket::after {
+      content: '';
+      position: absolute;
+      bottom: -6px; right: -6px;
+      width: 28px; height: 28px;
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      border-radius: 0 0 4px 0;
+    }
+
+    .hero-inner {
+      text-align: center;
+      transform: rotate(0.6deg);
+    }
+
+    /* "PORTFOLIO" title */
+    .title-portfolio {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: clamp(4rem, 12vw, 9rem);
+      line-height: 0.92;
+      color: var(--green);
+      -webkit-text-stroke: 5px var(--green);
+      text-stroke: 5px var(--green);
+      letter-spacing: -2px;
+      display: block;
+      text-shadow: 4px 6px 0 rgba(0,0,0,0.18);
+    }
+
+    /* "2025" badge */
+    .badge-year {
+      display: inline-block;
+      background: white;
+      color: var(--red-dark);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      padding: 4px 18px;
+      border-radius: 99px;
+      border: 2px solid var(--red-dark);
+      margin: 6px 0 24px;
+      letter-spacing: 2px;
+    }
+
+    /* Name strip */
+    .name-strip {
+      display: inline-block;
+      background: white;
+      border: 2px solid #b0b0b0;
+      border-radius: 6px;
+      padding: 8px 36px;
+      margin-top: 4px;
+    }
+
+    .name-strip h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 1.7rem;
+      color: var(--text);
+      letter-spacing: 1px;
+    }
+
+    .name-strip p {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    /* scroll cue */
+    .scroll-cue {
+      margin-top: 36px;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.95rem;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(8px); }
+    }
+
+    /* ── PROJECTS ── */
+    #projects {
+      background: var(--cream);
+      padding: 80px 5%;
+      position: relative;
+    }
+
+    /* torn paper edge top */
+    #projects::before {
+      content: '';
+      position: absolute;
+      top: -18px; left: 0; right: 0;
+      height: 20px;
+      background: var(--cream);
+      clip-path: polygon(
+        0% 100%, 2% 0%, 5% 80%, 8% 10%, 11% 90%, 14% 5%,
+        17% 85%, 20% 15%, 23% 95%, 26% 0%, 29% 80%, 32% 20%,
+        35% 100%, 38% 10%, 41% 90%, 44% 0%, 47% 85%, 50% 15%,
+        53% 95%, 56% 5%, 59% 80%, 62% 20%, 65% 100%, 68% 0%,
+        71% 85%, 74% 15%, 77% 95%, 80% 10%, 83% 90%, 86% 0%,
+        89% 80%, 92% 20%, 95% 100%, 98% 5%, 100% 70%, 100% 100%
+      );
+    }
+
+    .projects-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .projects-header h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--green);
+      -webkit-text-stroke: 3px var(--white);
+      text-stroke: 3px var(--white);
+      text-shadow: 2px 3px 0 rgba(0,0,0,0.12);
+      paint-order: stroke fill;
+      /* paint-order makes stroke render behind fill in supporting browsers */
+    }
+
+    .projects-header p {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      font-weight: 600;
+    }
+
+    /* Polaroid-style photo grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    /* =====================================================
+       CARA TAMBAH GAMBAR PROYEKMU:
+       1. Simpan gambar di folder yang sama dengan file HTML ini
+       2. Di dalam setiap .photo-frame, ubah bagian <img> seperti ini:
+          <img src="nama-gambar-kamu.jpg" alt="nama proyek" />
+       3. Atau kalau gambar online, ganti src dengan URL gambar
+    ===================================================== */
+    .photo-frame {
+      background: white;
+      padding: 12px 12px 40px;
+      box-shadow: 3px 4px 14px rgba(0,0,0,0.18);
+      position: relative;
+      transition: transform 0.25s;
+    }
+
+    .photo-frame:nth-child(odd)  { transform: rotate(-1.5deg); }
+    .photo-frame:nth-child(even) { transform: rotate(1.2deg); }
+    .photo-frame:nth-child(3n)   { transform: rotate(-0.6deg); }
+
+    .photo-frame:hover {
+      transform: rotate(0deg) scale(1.04) !important;
+      z-index: 10;
+      box-shadow: 6px 8px 24px rgba(0,0,0,0.25);
+    }
+
+    /* =====================================================
+       INI TEMPAT GAMBAR PROYEKMU — ganti <img> di sini
+       src="GANTI_DENGAN_NAMA_FILE_GAMBAR_KAMU.jpg"
+    ===================================================== */
+    .photo-frame img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      background: #e0e0e0;
+    }
+
+    /* Placeholder saat belum ada gambar */
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: #aaa;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .photo-placeholder .icon {
+      font-size: 2rem;
+      opacity: 0.4;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      padding: 70px 5%;
+      text-align: center;
+    }
+
+    .contact-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 6px;
+      padding: 44px 40px;
+      box-shadow: 4px 6px 0 rgba(0,0,0,0.2), 0 12px 28px rgba(0,0,0,0.22);
+      transform: rotate(0.5deg);
+    }
+
+    .contact-card h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      font-size: 0.95rem;
+      color: var(--text-sec);
+      margin-bottom: 28px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border-radius: 6px;
+      border: 2px solid var(--red);
+      background: white;
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--red-dark);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .contact-btn:hover {
+      background: var(--red);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: rgba(20, 60, 5, 0.85);
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 24px 5%;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+    }
+
+    footer strong { color: white; }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s, transform 0.55s;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .blanket { padding: 40px 28px 48px; }
+      .title-portfolio { -webkit-text-stroke: 3px white; }
+    }
+
+    @media (max-width: 480px) {
+      .photo-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .contact-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <div class="nav-logo">Ashel</div>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div>
+      <div class="blanket">
+        <div class="hero-inner">
+          <span class="title-portfolio">Port<br>folio</span>
+          <div class="badge-year">2025</div>
+          <br>
+          <div class="name-strip">
+            <h1>Ashel</h1>
+            <p>Geographic Information Systems, Oceanography and Creative Enthusiast</p>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue">scroll ke bawah &darr;</div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="projects-header reveal">
+      <h2>My Projects</h2>
+    </div>
+
+    <!--
+    =====================================================
+    CARA TAMBAH GAMBAR PROYEKMU:
+
+    Ganti setiap blok <div class="photo-placeholder"> dengan:
+    <img src="nama-file-gambar.jpg" alt="nama proyek" />
+
+    Contoh:
+    <img src="project-sst.jpg" alt="Analisis SPL" />
+
+    Simpan file gambarmu di folder yang sama dengan index.html ini.
+
+    Mau tambah project baru? Copy paste satu blok .photo-frame
+    dan ganti gambarnya.
+    =====================================================
+    -->
+
+    <div class="photo-grid">
+
+      <!-- PROJECT 1 — ganti photo-placeholder dengan <img src="..."> -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder">
+          <span><img src="Peta Kerawanan Banjir Rob.png" alt="Project 1" />
+          <p class="photo-caption">
+      Peta Kerawanan Banjir Rob Kecamatan Denpasar Selatan, Bali.
+       </p>
+      </div>
+        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 1" /> -->
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder">
+        <span><img src="Peta Ketinggian Tanah.png" alt="Project 2" />
+          <p class="photo-caption">
+      Peta Ketinggian Tanah (Lahan) Kecamatan Denpasar Selatan, Bali.
+       </p>
+        </div>
+        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 2" /> -->
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder">
+          <span><img src="Peta Kemiringan Lereng.png" alt="Project 3" /></span>
+          <p class="photo-caption">
+      Peta Kemiringan Tanah Kecamatan Denpasar Selatan, Bali.
+       </p>
+        </div>
+        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 3" /> -->
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder">
+          <span><img src="OUTPUT SURFER BATIMETRI.png" alt="Project 4" /></span>
+          <p class="photo-caption">
+      Survei Kontur Batimetri Laut Natuna, Kepulauan Riau.
+       </p>
+        </div>
+        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 4" /> -->
+      </div>
+
+      <!-- PROJECT 5 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder">
+          <span><img src="Analisis Potensi Banjir Jakarta Utara 2016-2024.png" alt="Project 5" /></span>
+          <p class="photo-caption">
+      Peta Analisis Potensi Banjir Jakarta Utara 2016-2024.
+       </p>
+        </div>
+        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 5" /> -->
+      </div>
+
+      <!-- PROJECT 6 -->
+      <div class="photo-frame reveal">
+        <div class="photo-placeholder">
+          <span><img src="Peta Penggunaan Lahan.png" alt="Project 6" /></span>
+          <p class="photo-caption">
+      Peta Penggunaan Lahan Kecamatan Denpasar Selatan, Bali.
+       </p>
+        </div>
+        <!-- <img src="NAMA_FILE_GAMBARMU.jpg" alt="Project 6" /> -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="contact-card reveal">
+      <h2>Let's Connect!</h2>
+      <p>let's get in touch!</p>
+      <div class="contact-links">
+        <!-- Ganti href="#" dengan link akun kamu -->
+        <a href="https://discordapp.com/users/@pinkmiracles" class="contact-btn">Discord</a>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com" class="contact-btn">LinkedIn</a>
+          <a href="https://www.instagram.com" class="contact-btn">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <strong>Ashel</strong> &mdash; Portfolio 2025
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 70);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+</body>
+<script>
+
+const decos = document.querySelectorAll(".deco");
+
+document.addEventListener("mousemove",(e)=>{
+
+  decos.forEach(item=>{
+
+    const rect = item.getBoundingClientRect();
+
+    const centerX = rect.left + rect.width/2;
+    const centerY = rect.top + rect.height/2;
+
+    const distance = Math.hypot(
+      e.clientX-centerX,
+      e.clientY-centerY
+    );
+
+    if(distance < 150){
+
+      item.style.transform =
+        "scale(1.25) rotate(8deg)";
+
+    }else{
+
+      item.style.transform =
+        "scale(1) rotate(0deg)";
+
+    }
+
+  });
+
+});
+
+</script>
+</html>
